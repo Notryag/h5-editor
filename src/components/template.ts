@@ -1,0 +1,15 @@
+export default [
+  { type: 'Carousel', h: 82, displayName: '轮播图组件', category: 'base' },
+  { type: 'Form', h: 172, displayName: '表格组件', category: 'base' },
+  { type: 'Header', h: 28, displayName: '页头组件', category: 'base' },
+  { type: 'Icon', h: 36, displayName: '图标组件', category: 'base' },
+  { type: 'Image', h: 80, displayName: '图片组件', category: 'base' },
+  { type: 'List', h: 110, displayName: '列表组件', category: 'base' },
+  { type: 'LongText', h: 36, displayName: '长文本组件', category: 'base' },
+  { type: 'Notice', h: 20, displayName: '通知组件', category: 'base' },
+  { type: 'Qrcode', h: 150, displayName: '二维码组件', category: 'base' },
+  { type: 'Tab', h: 130, displayName: '切换页组件', category: 'base' },
+  { type: 'Text', h: 20, displayName: '文本组件', category: 'base' },
+  { type: 'WhiteTpl', h: 20, displayName: '空白组件', category: 'base' },
+  { type: 'RichText', h: 120, displayName: '富文本组件', category: 'base' },
+];

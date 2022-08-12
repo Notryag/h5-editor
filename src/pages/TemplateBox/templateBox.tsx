@@ -1,0 +1,24 @@
+import React from 'react';
+import { useDrag } from 'react-dnd';
+import schemaH5 from '../../components/schema';
+import styles from './templateBox.less';
+
+export default function Page(props: any) {
+  let { item } = props
+  
+  const [{ isDragging }, drag, dragPreview] = useDrag(() => ({
+    type: item.type,
+    // confit: schemaH5[item.type].config,
+    collect: (monitor) => ({
+      isDragging: !!monitor.isDragging(),
+    }),
+  }));
+  return (
+    <>
+      <div className="module" ref={drag} style={{opacity: isDragging ? 0.4 : 1}}>
+        <div className="module-content"></div>
+        <div className="module-title">{item.displayName}</div>
+      </div>
+    </>
+  );
+}

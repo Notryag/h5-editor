@@ -1,0 +1,47 @@
+:root {
+  --blue: #1e90ff;
+  --width: 300px;
+}
+
+.editor-wrap {
+  display: flex;
+  background-color: gray;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100%;
+  .page-left {
+    width: var(--width);
+    background-color: aqua;
+  }
+  .page-center {
+    flex: 1;
+    background-color: chocolate;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    #display-canvas {
+      width: 375px;
+      height: 812px;
+      background-color: #ffffff;
+    }
+  }
+  .page-right {
+    width: var(--width);
+    background-color: bisque;
+  }
+}
+
+.module {
+  display: inline-block;
+  cursor: move;
+  width: 50%;
+  height: 140px;
+  border: 1px solid rebeccapurple;
+  .module-content {
+    height: 110px;
+  }
+  .module-title {
+    text-align: center;
+    height: 30px;
+  }
+}
