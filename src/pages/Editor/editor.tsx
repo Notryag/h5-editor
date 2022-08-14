@@ -13,7 +13,6 @@ export default function Page() {
       canDrop: () => true,
       drop: (item: { h: number; type: string; x: number }, monitor) => {
         console.log('drap',item);
-      
       },
       collect: monitor => ({
         isOver: !!monitor.isOver(),
@@ -31,7 +30,7 @@ export default function Page() {
       </div>
       <div className="page-center">
         <div id="display-canvas" ref={drop}>
-           zhanshiqu
+           zhanshiqu456123
         </div>
       </div>
       <div className="page-right">rigth</div>

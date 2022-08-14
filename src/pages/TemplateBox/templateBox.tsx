@@ -8,7 +8,7 @@ export default function Page(props: any) {
   
   const [{ isDragging }, drag, dragPreview] = useDrag(() => ({
     type: item.type,
-    // confit: schemaH5[item.type].config,
+    confit: schemaH5[item.type].config,
     collect: (monitor) => ({
       isDragging: !!monitor.isDragging(),
     }),
