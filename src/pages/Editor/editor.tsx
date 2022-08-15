@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './editor.less';
 import BasicTemplate from '@/components/template';
+import Workspace from '@/components/Workspace';
+
 import TemplateBox from '../TemplateBox/templateBox';
-import { useDrop } from 'react-dnd';
+import { useDrag, useDrop } from 'react-dnd';
+import { useDispatch, useSelector } from 'umi';
 
 export default function Page() {
+  const dispatch = useDispatch()
   let allType = BasicTemplate.map(v => v.type)
   
   const [{ isOver, canDrop }, drop] = useDrop(
@@ -12,7 +16,12 @@ export default function Page() {
       accept: allType,
       canDrop: () => true,
       drop: (item: { h: number; type: string; x: number }, monitor) => {
-        console.log('drap',item);
+        dispatch({
+          type: 'editor/addNode',
+          payLoad: {
+            ...item
+          }
+        })
       },
       collect: monitor => ({
         isOver: !!monitor.isOver(),
@@ -21,6 +30,10 @@ export default function Page() {
       }),
     })
   )
+
+  // const state = useSelector(state => state.count)
+  
+
   return (
     <div className="editor-wrap">
       <div className="page-left">
@@ -30,7 +43,7 @@ export default function Page() {
       </div>
       <div className="page-center">
         <div id="display-canvas" ref={drop}>
-           zhanshiqu456123
+           <Workspace/>
         </div>
       </div>
       <div className="page-right">rigth</div>
